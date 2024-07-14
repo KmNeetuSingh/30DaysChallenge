@@ -1,5 +1,6 @@
 //Operators
 //so genrally three types of operator in javascript 
+//Arithmetic , Logical , Comparison
 
 // Activity 1: Arithmetic Operations
 
