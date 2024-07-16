@@ -1,5 +1,5 @@
-/* This is day-3 of javascript challenge by "Hitesh Choudhary sir" */
-//----------------------------Activity-1(IF-Else statement)-----------------------
+/* This is day-3 of javascript challenge Assignment */
+//Activity-1(IF-Else statement)-----------------------
 
 function checkNumber(num) { //task-1
     if (num > 0) {
@@ -22,7 +22,7 @@ function checkNumber(num) { //task-1
     console.log("You are not eligible for voting");
   }
   
-  //-----------------Activity-2(Nested if-else statement)--------------------
+//Activity-2(Nested if-else statement)--------------------
   
   function findLargest(a, b, c) {  //task-3
     let largest;
@@ -46,7 +46,7 @@ function checkNumber(num) { //task-1
   
   findLargest(5, 25, 15);
   
-  //------------------------Activity-3(Switch case)--------------------------
+  //Activity-3(Switch case)--------------------------
   
   function getDayOfWeek(dayNumber) {  //task-4
     let day;
@@ -111,7 +111,7 @@ function checkNumber(num) { //task-1
   
   assignGrade(85); 
   
-  //---------------------------Activity-4(Conditional TERNARY Operator)--------------------------
+  //Activity-4(Conditional TERNARY Operator)--------------------------
   
   function checkEvenOrOdd(num) { //task-6
     const result = (num % 2 === 0) ? `${num} is even` : `${num} is odd`;
@@ -119,7 +119,7 @@ function checkNumber(num) { //task-1
   }
   checkEvenOrOdd(7);
   
-  //--------------------Activity-5(combining operator)----------------------------
+  //Activity-5(combining operator)----------------------------
   
   function isLeapYear(year) { //task-7
     if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
@@ -129,6 +129,6 @@ function checkNumber(num) { //task-1
     }
   }
   
-  isLeapYear(2024);
-  isLeapYear(1900);
+  isLeapYear(2020);
+  isLeapYear(2019);
   
