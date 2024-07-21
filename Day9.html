@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Days of JavaScript - Day 9: DOM Manipulation</title>
+    <style>
+        .example {
+            width: 100px;
+            height: 100px;
+        }
+        .highlight {
+            border: 2px solid red;
+        }
+        .borderChange {
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Activity 1: Selecting and Manipulating Elements -->
+    <p id="example">Original Text</p>
+    <div class="example">Example Div</div>
+
+    <!-- Activity 2: Creating and Appending Elements -->
+    <!-- Placeholder for the new div to be appended -->
+    <ul id="exampleList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+
+    <!-- Activity 3: Removing Elements -->
+    <p id="toRemove">This paragraph will be removed.</p>
+    <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- Activity 4: Modifying Attributes and Classes -->
+    <img id="exampleImage" src="Add.jpg" alt="New Image">
+    <p id="exampleParagraph">Paragraph</p>
+
+    <!-- Activity 5: Event Handling -->
+    <p id="textParagraph">Click the button to change this text.</p>
+    <button id="changeTextButton">Change Text</button>
+    <div id="hoverElement" class="borderChange">Hover over me</div>
+
+    <script>
+        // Activity 1: Selecting and Manipulating Elements
+        document.getElementById("example").textContent = "Hello, Ia ma NEetu Idngh An aspiring developer";
+        document.querySelector(".example").style.backgroundColor = "lightblue";
+
+        // Activity 2: Creating and Appending Elements
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "Happy Coding";
+        document.body.appendChild(newDiv);
+
+        const newLi = document.createElement("li");
+        newLi.textContent = "New Item";
+        document.getElementById("exampleList").appendChild(newLi);
+
+        // Activity 3: Removing Elements
+        const elementToRemove = document.getElementById("toRemove");
+        elementToRemove.parentNode.removeChild(elementToRemove);
+
+        const list = document.getElementById("list");
+        list.removeChild(list.lastElementChild);
+
+        // Activity 4: Modifying Attributes and Classes
+        document.getElementById("exampleImage").setAttribute("src", "Add.jpg");
+
+        const paragraph = document.getElementById("exampleParagraph");
+        paragraph.classList.add("highlight");
+        setTimeout(() => {
+            paragraph.classList.remove("highlight");
+        }, 2000);
+
+        // Activity 5: Event Handling
+        document.getElementById("changeTextButton").addEventListener("click", () => {
+            document.getElementById("textParagraph").textContent = "The text has been changed!";
+        });
+
+        document.getElementById("hoverElement").addEventListener("mouseover", () => {
+            document.getElementById("hoverElement").style.borderColor = "blue";
+        });
+    </script>
+</body>
+</html>
