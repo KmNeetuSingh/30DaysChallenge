@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 30 Days Challenge - Day 10: Event Handling</title>
+    <style>
+        #hoverDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Activity 1: Basic Event Handling</h2>
+    <button id="clickButton">Click me</button>
+    <p id="textParagraph">This is a paragraph.</p>
+    <img id="toggleImage" src="Add.jpg" alt="Toggle Image" style="display: block;">
+
+    <h2>Activity 2: Mouse Events</h2>
+    <div id="hoverDiv">Hover over me!</div>
+
+    <h2>Activity 3: Keyboard Events</h2>
+    <input type="text" id="inputField" placeholder="Type something...">
+    <p id="displayText">Current value: </p>
+
+    <h2>Activity 4: Form Events</h2>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <label for="dropdown">Choose an option:</label>
+    <select id="dropdown">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+    <p id="selectedValue">Selected value: </p>
+
+    <h2>Activity 5: Event Delegation</h2>
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+
+    <script>
+        // Activity 1: Basic Event Handling
+        document.getElementById('clickButton').addEventListener('click', function() {
+            document.getElementById('textParagraph').textContent = 'The text has been changed!';
+        });
+
+        document.getElementById('toggleImage').addEventListener('dblclick', function() {
+            const img = document.getElementById('toggleImage');
+            img.style.display = img.style.display === 'none' ? 'block' : 'none';
+        });
+
+        // Activity 2: Mouse Events
+        const hoverDiv = document.getElementById('hoverDiv');
+
+        hoverDiv.addEventListener('mouseover', function() {
+            hoverDiv.style.backgroundColor = 'lightblue';
+        });
+
+        hoverDiv.addEventListener('mouseout', function() {
+            hoverDiv.style.backgroundColor = 'lightgray';
+        });
+
+        // Activity 3: Keyboard Events
+        const inputField = document.getElementById('inputField');
+        const displayText = document.getElementById('displayText');
+
+        inputField.addEventListener('keydown', function(event) {
+            console.log('Key pressed:', event.key);
+        });
+
+        inputField.addEventListener('keyup', function() {
+            displayText.textContent = 'Current value: ' + inputField.value;
+        });
+
+        // Activity 4: Form Events
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            console.log('Form submitted! Name:', document.getElementById('name').value);
+        });
+
+        document.getElementById('dropdown').addEventListener('change', function() {
+            document.getElementById('selectedValue').textContent = 'Selected value: ' + this.value;
+        });
+
+        // Activity 5: Event Delegation
+        document.getElementById('myList').addEventListener('click', function(event) {
+            if (event.target.tagName === 'LI') {
+                console.log('Clicked item:', event.target.textContent);
+            }
+        });
+
+        document.getElementById('addItem').addEventListener('click', function() {
+            const newItem = document.createElement('li');
+            newItem.textContent = 'Item ' + (document.getElementById('myList').children.length + 1);
+            document.getElementById('myList').appendChild(newItem);
+        });
+    </script>
+</body>
+</html>
