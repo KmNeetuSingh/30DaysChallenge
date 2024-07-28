@@ -1,3 +1,4 @@
+
 // Add Module
 function add(a, b) {
     return a + b;
@@ -5,7 +6,7 @@ function add(a, b) {
 
 // Person Module
 const person = {
-    name: 'Neetu Singh',
+    name: ' Aavika Singh',
     age: 20,
     greet() {
         console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);

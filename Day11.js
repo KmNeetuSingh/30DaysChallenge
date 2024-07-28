@@ -1,5 +1,5 @@
-//--------Here is Day--11 task solution -------------------------
-//----------------Activity-1(Understanding promises)----------------------
+//Today is Day11 and we are dive into learn the promises today exploring more things init.........
+//Activity-1(Understanding promises)
 
 // Task-1: Resolving a promise with a delay
 const delayedMessage = new Promise((resolve) => {
@@ -23,7 +23,7 @@ delayedError.catch(error => {
     console.error(error.message);
 });
 
-//--------------------Activity-2(Chaining promises)-----------------------
+//Activity-2(Chaining promises)
 
 function fetchData(delay, message) {
     return new Promise((resolve) => {
@@ -54,7 +54,7 @@ fetchData(1000, "Fetching data from server 1...")
         console.error("An error occurred:", error);
     });
 
-//--------------------Activity-3(Using async/await)-----------------------
+//Activity-3(Using async/await)
 
 async function logResolvedValue() {
     try {
@@ -86,7 +86,7 @@ async function handleRejectedPromise() {
 
 handleRejectedPromise();
 
-//--------------------Activity-4(fetching data from an API)-----------------------
+//Activity-4(fetching data from an API)
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
 
@@ -120,7 +120,7 @@ async function fetchDataAsync() {
 
 fetchDataAsync();
 
-//--------------------Activity-5(Concurrent promises)-----------------------
+//Activity-5(Concurrent promises)
 
 function fetchDataConcurrent(delay, id) {
     return new Promise((resolve) => {

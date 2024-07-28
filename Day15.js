@@ -1,3 +1,5 @@
+///Day-15....Closures........
+//A closure is a function that retains access to its outer lexical scope, even when the function is executed outside that scope.
 // Task 1: Function that returns another function accessing outer variable
 function outerFunction(outerVariable) {
     return function innerFunction() {
