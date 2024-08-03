@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalStorage and SessionStorage Tasks</title>
+</head>
+<body>
+    <h1>LocalStorage and SessionStorage Tasks</h1>
+    <script>
+        // Activity 1: Understanding LocalStorage
+        // Task 1: Save and retrieve a string value
+        localStorage.setItem('myString', 'Hello, LocalStorage!');
+        const retrievedString = localStorage.getItem('myString');
+        console.log(retrievedString);  // Output: Hello, LocalStorage!
+
+        // Task 2: Save and retrieve an object
+        const myObject = { name: 'John', age: 30 };
+        localStorage.setItem('myObject', JSON.stringify(myObject));
+        const retrievedObject = JSON.parse(localStorage.getItem('myObject'));
+        console.log(retrievedObject);  // Output: { name: 'John', age: 30 }
+
+        // Activity 2: Using LocalStorage
+        // Task 3: Save user input and display on page load
+        const saveUserInput = (key, value) => {
+            localStorage.setItem(key, value);
+        };
+        const displayUserInput = (key) => {
+            const value = localStorage.getItem(key);
+            if (value) {
+                console.log(`${key}: ${value}`);
+            }
+        };
+        saveUserInput('username', 'Alice');
+        displayUserInput('username');  
+
+        // Task 4: Remove an item and log before and after removal
+        console.log(localStorage.getItem('username')); 
+        localStorage.removeItem('username');
+        console.log(localStorage.getItem('username'));  
+
+        // Activity 3: Understanding SessionStorage
+        // Task 5: Save and retrieve a string value
+        sessionStorage.setItem('mySessionString', 'Hello, SessionStorage!');
+        const retrievedSessionString = sessionStorage.getItem('mySessionString');
+        console.log(retrievedSessionString);  
+
+        // Task 6: Save and retrieve an object
+        const mySessionObject = { name: 'Doe', age: 25 };
+        sessionStorage.setItem('mySessionObject', JSON.stringify(mySessionObject));
+        const retrievedSessionObject = JSON.parse(sessionStorage.getItem('mySessionObject'));
+        console.log(retrievedSessionObject);  
+
+        // Activity 4: Using SessionStorage
+        // Task 7: Save user input and display on page load
+        const saveSessionUserInput = (key, value) => {
+            sessionStorage.setItem(key, value);
+        };
+        const displaySessionUserInput = (key) => {
+            const value = sessionStorage.getItem(key);
+            if (value) {
+                console.log(`${key}: ${value}`);
+            }
+        };
+        saveSessionUserInput('sessionUsername', 'Bob');
+        displaySessionUserInput('sessionUsername');  // Output: sessionUsername: Bob
+
+        // Task 8: Remove an item and log before and after removal
+        console.log(sessionStorage.getItem('sessionUsername'));  // Output: Bob
+        sessionStorage.removeItem('sessionUsername');
+        console.log(sessionStorage.getItem('sessionUsername'));  // Output: null
+
+        // Activity 5: Comparing LocalStorage and SessionStorage
+        // Task 9: Save to both storages and log values
+        const saveToBothStorages = (key, value) => {
+            localStorage.setItem(key, value);
+            sessionStorage.setItem(key, value);
+        };
+        const logValuesFromBothStorages = (key) => {
+            const localValue = localStorage.getItem(key);
+            const sessionValue = sessionStorage.getItem(key);
+            console.log(`localStorage: ${localValue}, sessionStorage: ${sessionValue}`);
+        };
+        saveToBothStorages('sharedKey', 'sharedValue');
+        logValuesFromBothStorages('sharedKey');  // Output: localStorage: sharedValue, sessionStorage: sharedValue
+
+        // Task 10: Clear both storages and verify
+        localStorage.clear();
+        sessionStorage.clear();
+        console.log(localStorage.getItem('sharedKey'));  // Output: null
+        console.log(sessionStorage.getItem('sharedKey'));  // Output: null
+    </script>
+</body>
+</html>
